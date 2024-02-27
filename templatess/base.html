@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="{% static "css/base.css" %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap4/css/bootstrap.min.css' %}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+    </head>
+<body>
+
+<div class="navbar">
+    <ul>
+        <li><a href="{% url 'students' %}">Students </a></li>
+        <li><a href="{% url 'create_student' %}">Create Student</a></li>
+        <li><a href="{% url 'contact' %}">Users</a></li>
+        <li><a href="{% url 'login' %}">login</a></li>
+        <li><a href="{% url 'signup' %}">signup</a></li>
+        <li style="float:right"><a class="active" href="{% url 'signout' %}">Logout</a></li>
+        <li style="float:right"><a href="#">{{request.session.email}}</a></li>
+
+
+    </ul>
+</div>
+
+{% block body %}
+
+
+{% endblock body %}
+
+
+<script src="{% static 'bootstrap4/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static  %}
+{% static 'bootstrap4/css/bootstrap.min.css' %}
+
+{% block body %}
+
+
+<table id="customers">
+
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">f_name</th>
+      <th scope="col">l_name</th>
+      <th scope="col">age</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for student in students  %}
+    <tr>
+      <td>{{student.id}}</td>
+      <td>{{student.f_name}}</td>
+      <td>{{student.l_name}}</td>
+      <td>{{student.age}}</td>
+      <td> <button  class="cancelbtn"><a style="color:white" href="{%url 'delete_student' student.id %}" >Delete</a></button></td>
+      <td><button class="signupbtn"><a  style="color:white" href="{%url 'edit_student' student.id %}" >Edit</a></button></td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+
+
+
+
+{% endblock body %}

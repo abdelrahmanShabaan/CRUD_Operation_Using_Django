@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load static  %}
+{% static 'bootstrap4/css/bootstrap.min.css' %}
+
+{% block body %}
+
+
+<table id="customers">
+
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">password</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users  %}
+    <tr>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+      <td> <button  class="cancelbtn"><a style="color:white" href="#" >Delete</a></button></td>
+      <td><button class="signupbtn"><a  style="color:white" href="#" >Edit</a></button></td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+
+
+
+
+{% endblock body %}

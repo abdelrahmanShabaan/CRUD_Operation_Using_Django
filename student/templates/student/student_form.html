@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static  %}
+{% static 'bootstrap4/css/bootstrap.min.css' %}
+
+{% block body %}
+
+
+
+<div class="container mt-5 w-100">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+
+
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+
+
+</div>
+
+{% endblock body %}

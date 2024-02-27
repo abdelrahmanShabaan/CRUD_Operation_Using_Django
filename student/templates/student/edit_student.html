@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static  %}
+{% static 'bootstrap4/css/bootstrap.min.css' %}
+
+{% block body %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-container">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" value="{{student.f_name}}"><br>
+
+        <label for="lastname">Lastname</label>
+        <input type="text" id="lastname" name="lastname" value="{{student.l_name}}"><br>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" value="{{student.age}}"><br><br>
+
+        <input type="submit" class="registerbtn" value="Submit">
+    </div>
+</form>
+
+{% endblock body %}
